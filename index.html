@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAMBALA — Premium Mountain Resort</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="loader-logo">SHAMBALA</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">SHAMBALA</span>
+    </a>
+    <nav class="nav">
+      <a href="#about">О комплексе</a>
+      <a href="#cottages">Домики</a>
+      <a href="#spa">SPA & Баня</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+79999999999" class="phone"><i class="fas fa-phone-alt"></i> +7 (999) 999-99-99</a>
+      <button class="btn-book" onclick="openBooking()">Забронировать</button>
+      <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="https://cdn.coverr.co/videos/coverr-mountains-in-the-fog-4919/1080p.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">✦ Премиальный горный курорт ✦</div>
+    <h1 class="hero-title">SHAMBALA</h1>
+    <p class="hero-subtitle">Роскошь уединения среди вершин Кавказа</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="openBooking()">Забронировать отдых</button>
+      <a href="#cottages" class="btn-ghost">Посмотреть домики</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Прокрутите вниз</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+  
+  <!-- Quick booking widget -->
+  <div class="quick-book">
+    <div class="qb-field">
+      <label>Заезд</label>
+      <input type="date" id="qb-in">
+    </div>
+    <div class="qb-divider"></div>
+    <div class="qb-field">
+      <label>Выезд</label>
+      <input type="date" id="qb-out">
+    </div>
+    <div class="qb-divider"></div>
+    <div class="qb-field">
+      <label>Гости</label>
+      <select id="qb-guests">
+        <option>1 гость</option>
+        <option>2 гостя</option>
+        <option>3 гостя</option>
+        <option>4 гостя</option>
+        <option>5+ гостей</option>
+      </select>
+    </div>
+    <div class="qb-divider"></div>
+    <div class="qb-field">
+      <label>Домик</label>
+      <select id="qb-cottage">
+        <option>Любой</option>
+        <option>Premium Suite</option>
+        <option>Forest Lodge</option>
+        <option>Sky View</option>
+        <option>Royal Villa</option>
+      </select>
+    </div>
+    <button class="qb-submit" onclick="openBooking()">Проверить наличие</button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-tag">О комплексе</div>
+        <h2 class="section-title">Место, где останавливается время</h2>
+        <p>SHAMBALA — это эксклюзивный горный резорт, расположенный в самом сердце живописного ущелья. Мы создали пространство для тех, кто ценит приватность, эстетику и безупречный сервис.</p>
+        <p>Авторская архитектура, панорамные виды, собственный SPA-комплекс, аутентичная баня на дровах и ресторан высокой кухни — всё для вашего идеального отдыха.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-num">12</span><span class="stat-label">Авторских домиков</span></div>
+          <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Уровень сервиса</span></div>
+          <div class="stat"><span class="stat-num">1800м</span><span class="stat-label">Над уровнем моря</span></div>
+          <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Консьерж-сервис</span></div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800" alt="Shambala">
+        <div class="about-badge">
+          <i class="fas fa-award"></i>
+          <span>Best Resort 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COTTAGES -->
+<section class="cottages" id="cottages">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Размещение</div>
+      <h2 class="section-title">Выберите свой домик</h2>
+      <p class="section-sub">Каждый домик — произведение искусства с уникальным характером</p>
+    </div>
+
+    <div class="cottages-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="premium">Premium</button>
+      <button class="filter-btn" data-filter="family">Семейные</button>
+      <button class="filter-btn" data-filter="romantic">Для двоих</button>
+    </div>
+
+    <div class="cottages-grid">
+      <!-- Cottage 1 -->
+      <div class="cottage-card" data-cat="premium romantic">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=800" alt="Premium Suite">
+          <div class="cottage-badge">ХИТ</div>
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('premium')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Premium Suite</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-user-friends"></i> 2 гостя</span>
+            <span><i class="fas fa-bed"></i> 1 спальня</span>
+            <span><i class="fas fa-hot-tub"></i> Джакузи</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">18 500 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Premium Suite')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cottage 2 -->
+      <div class="cottage-card" data-cat="family">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800" alt="Forest Lodge">
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('forest')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Forest Lodge</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-user-friends"></i> 4 гостя</span>
+            <span><i class="fas fa-bed"></i> 2 спальни</span>
+            <span><i class="fas fa-fire"></i> Камин</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">24 900 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Forest Lodge')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cottage 3 -->
+      <div class="cottage-card" data-cat="premium">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800" alt="Sky View">
+          <div class="cottage-badge">NEW</div>
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('sky')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Sky View</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-user-friends"></i> 3 гостя</span>
+            <span><i class="fas fa-mountain"></i> Панорама</span>
+            <span><i class="fas fa-wine-glass-alt"></i> Терраса</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">29 500 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Sky View')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cottage 4 -->
+      <div class="cottage-card" data-cat="premium family">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800" alt="Royal Villa">
+          <div class="cottage-badge gold">VIP</div>
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('royal')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Royal Villa</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-user-friends"></i> 6 гостей</span>
+            <span><i class="fas fa-bed"></i> 3 спальни</span>
+            <span><i class="fas fa-swimming-pool"></i> Бассейн</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">48 000 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Royal Villa')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cottage 5 -->
+      <div class="cottage-card" data-cat="romantic">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1587061633885-2a6e9a1b3a5c?w=800" alt="Honeymoon">
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('honey')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Honeymoon Chalet</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-heart"></i> Романтика</span>
+            <span><i class="fas fa-hot-tub"></i> SPA</span>
+            <span><i class="fas fa-champagne-glasses"></i> Шампанское</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">22 000 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Honeymoon Chalet')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cottage 6 -->
+      <div class="cottage-card" data-cat="family">
+        <div class="cottage-image">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800" alt="Family">
+          <div class="cottage-hover">
+            <button class="btn-view" onclick="openCottage('family')">Подробнее</button>
+          </div>
+        </div>
+        <div class="cottage-info">
+          <h3>Family House</h3>
+          <div class="cottage-features">
+            <span><i class="fas fa-user-friends"></i> 5 гостей</span>
+            <span><i class="fas fa-bed"></i> 2 спальни</span>
+            <span><i class="fas fa-utensils"></i> Кухня</span>
+          </div>
+          <div class="cottage-price">
+            <div><span class="price-from">от</span> <span class="price-val">26 500 ₽</span> <span class="price-per">/ночь</span></div>
+            <button class="btn-book-sm" onclick="openBooking('Family House')">Забронировать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPA -->
+<section class="spa" id="spa">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-tag light">Wellness</div>
+      <h2 class="section-title light">SPA & Банный комплекс</h2>
+      <p class="section-sub light">Погрузитесь в атмосферу расслабления и восстановления</p>
+    </div>
+
+    <div class="spa-tabs">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="banya">Русская баня</button>
+        <button class="tab-btn" data-tab="hamam">Хамам</button>
+        <button class="tab-btn" data-tab="spa">SPA-процедуры</button>
+        <button class="tab-btn" data-tab="pool">Бассейн</button>
+      </div>
+      <div class="tabs-content">
+        <div class="tab-pane active" id="banya">
+          <div class="tab-grid">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800" alt="Баня">
+            <div class="tab-text">
+              <h3>Аутентичная русская баня</h3>
+              <p>Настоящая баня на дровах с парением на свежих вениках. Дубовая парная, купель с горной водой и травяные чаи.</p>
+              <ul class="tab-list">
+                <li><i class="fas fa-check"></i> Парение мастером</li>
+                <li><i class="fas fa-check"></i> Веники из Алтая</li>
+                <li><i class="fas fa-check"></i> Ледяная купель</li>
+                <li><i class="fas fa-check"></i> Травяной чай</li>
+              </ul>
+              <div class="tab-price">от 5 000 ₽ / час</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="hamam">
+          <div class="tab-grid">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800" alt="Хамам">
+            <div class="tab-text">
+              <h3>Восточный хамам</h3>
+              <p>Подлинный турецкий хамам с мраморным чебеком, пенный массаж и пилинг кесе.</p>
+              <ul class="tab-list">
+                <li><i class="fas fa-check"></i> Пенный массаж</li>
+                <li><i class="fas fa-check"></i> Пилинг кесе</li>
+                <li><i class="fas fa-check"></i> Мыло Алеппо</li>
+                <li><i class="fas fa-check"></i> Чайная церемония</li>
+              </ul>
+              <div class="tab-price">от 7 500 ₽ / сеанс</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="spa">
+          <div class="tab-grid">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800" alt="SPA">
+            <div class="tab-text">
+              <h3>SPA-процедуры</h3>
+              <p>Авторские программы от ведущих косметологов. Массаж, обёртывания, ароматерапия.</p>
+              <ul class="tab-list">
+                <li><i class="fas fa-check"></i> Тайский массаж</li>
+                <li><i class="fas fa-check"></i> Стоун-терапия</li>
+                <li><i class="fas fa-check"></i> Обёртывания</li>
+                <li><i class="fas fa-check"></i> Ароматерапия</li>
+              </ul>
+              <div class="tab-price">от 4 500 ₽ / процедура</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="pool">
+          <div class="tab-grid">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800" alt="Бассейн">
+            <div class="tab-text">
+              <h3>Панорамный бассейн</h3>
+              <p>Открытый бассейн с подогревом и видом на горы. Шезлонги, бар у воды и безупречный сервис.</p>
+              <ul class="tab-list">
+                <li><i class="fas fa-check"></i> Подогрев 32°C</li>
+                <li><i class="fas fa-check"></i> Панорамный вид</li>
+                <li><i class="fas fa-check"></i> Pool Bar</li>
+                <li><i class="fas fa-check"></i> Шезлонги VIP</li>
+              </ul>
+              <div class="tab-price">Для гостей — бесплатно</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-tag">Галерея</div>
+      <h2 class="section-title">Атмосфера SHAMBALA</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item big"><img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=900" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=600" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600" alt=""></div>
+      <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600" alt=""></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-tag">Отзывы</div>
+      <h2 class="section-title">Что говорят гости</h2>
+    </div>
+    <div class="reviews-slider">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>«Невероятное место! Архитектура, сервис, природа — всё на высшем уровне. Баня — это отдельное произведение искусства.»</p>
+        <div class="review-author">
+          <strong>Анна К.</strong><span>Москва</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>«Отдыхали семьёй в Royal Villa. Детям понравился бассейн, нам — вид с террасы. Вернёмся обязательно!»</p>
+        <div class="review-author">
+          <strong>Дмитрий В.</strong><span>Санкт-Петербург</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>«Провели медовый месяц в Honeymoon Chalet. Романтика, уединение и безупречный сервис. Спасибо команде!»</p>
+        <div class="review-author">
+          <strong>Екатерина Л.</strong><span>Краснодар</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <div class="container">
+    <h2>Готовы к незабываемому отдыху?</h2>
+    <p>Забронируйте свой домик сегодня и получите скидку 10% на SPA</p>
+    <button class="btn-primary" onclick="openBooking()">Забронировать сейчас</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <span class="logo-mark">✦</span>
+          <span class="logo-text">SHAMBALA</span>
+        </a>
+        <p>Премиальный горный резорт для ценителей приватности и безупречного сервиса.</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <a href="#about">О комплексе</a>
+        <a href="#cottages">Домики</a>
+        <a href="#spa">SPA</a>
+        <a href="#gallery">Галерея</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <a href="tel:+79999999999"><i class="fas fa-phone"></i> +7 (999) 999-99-99</a>
+        <a href="mailto:info@shambala.travel"><i class="fas fa-envelope"></i> info@shambala.travel</a>
+        <p><i class="fas fa-map-marker-alt"></i> Кавказские горы, ущелье</p>
+      </div>
+      <div class="footer-      <div class="footer-col">
+        <h4>Рассылка</h4>
+        <p>Получайте спецпредложения первыми</p>
+        <form class="newsletter" onsubmit="subscribe(event)">
+          <input type="email" placeholder="Ваш email" required>
+          <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 SHAMBALA Resort. Все права защищены.</p>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Пользовательское соглашение</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal">
+  <div class="modal-overlay" onclick="closeBooking()"></div>
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+    
+    <div class="booking-steps">
+      <div class="step active" data-step="1"><span>1</span> Даты</div>
+      <div class="step" data-step="2"><span>2</span> Домик</div>
+      <div class="step" data-step="3"><span>3</span> Услуги</div>
+      <div class="step" data-step="4"><span>4</span> Данные</div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="booking-step active" id="step-1">
+      <h2>Выберите даты отдыха</h2>
+      <p class="step-sub">Когда планируете приехать?</p>
+      <div class="booking-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Дата заезда</label>
+            <input type="date" id="bk-in" required>
+          </div>
+          <div class="form-field">
+            <label>Дата выезда</label>
+            <input type="date" id="bk-out" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Количество гостей</label>
+            <select id="bk-guests">
+              <option value="1">1 гость</option>
+              <option value="2" selected>2 гостя</option>
+              <option value="3">3 гостя</option>
+              <option value="4">4 гостя</option>
+              <option value="5">5 гостей</option>
+              <option value="6">6 гостей</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Дети</label>
+            <select id="bk-kids">
+              <option value="0">Без детей</option>
+              <option value="1">1 ребёнок</option>
+              <option value="2">2 ребёнка</option>
+              <option value="3">3 ребёнка</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="btn-primary" onclick="nextStep(2)">Далее <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="booking-step" id="step-2">
+      <h2>Выберите домик</h2>
+      <p class="step-sub">Все варианты свободны на выбранные даты</p>
+      <div class="booking-cottages">
+        <label class="bk-cottage">
+          <input type="radio" name="cottage" value="Premium Suite" data-price="18500">
+          <div class="bk-cottage-card">
+            <img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=400">
+            <div class="bk-c-info">
+              <h4>Premium Suite</h4>
+              <span>2 гостя · Джакузи</span>
+              <div class="bk-price">18 500 ₽ / ночь</div>
+            </div>
+          </div>
+        </label>
+        <label class="bk-cottage">
+          <input type="radio" name="cottage" value="Forest Lodge" data-price="24900">
+          <div class="bk-cottage-card">
+            <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400">
+            <div class="bk-c-info">
+              <h4>Forest Lodge</h4>
+              <span>4 гостя · Камин</span>
+              <div class="bk-price">24 900 ₽ / ночь</div>
+            </div>
+          </div>
+        </label>
+        <label class="bk-cottage">
+          <input type="radio" name="cottage" value="Sky View" data-price="29500">
+          <div class="bk-cottage-card">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400">
+            <div class="bk-c-info">
+              <h4>Sky View</h4>
+              <span>3 гостя · Панорама</span>
+              <div class="bk-price">29 500 ₽ / ночь</div>
+            </div>
+          </div>
+        </label>
+        <label class="bk-cottage">
+          <input type="radio" name="cottage" value="Royal Villa" data-price="48000">
+          <div class="bk-cottage-card">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400">
+            <div class="bk-c-info">
+              <h4>Royal Villa</h4>
+              <span>6 гостей · Бассейн</span>
+              <div class="bk-price">48 000 ₽ / ночь</div>
+            </div>
+          </div>
+        </label>
+      </div>
+      <div class="step-actions">
+        <button class="btn-ghost-dark" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Назад</button>
+        <button class="btn-primary" onclick="nextStep(3)">Далее <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="booking-step" id="step-3">
+      <h2>Дополнительные услуги</h2>
+      <p class="step-sub">Сделайте отдых ещё лучше</p>
+      <div class="services-grid">
+        <label class="service">
+          <input type="checkbox" value="5000" data-name="Русская баня">
+          <div class="service-card">
+            <i class="fas fa-fire"></i>
+            <h5>Русская баня</h5>
+            <span>+5 000 ₽</span>
+          </div>
+        </label>
+        <label class="service">
+          <input type="checkbox" value="7500" data-name="Хамам">
+          <div class="service-card">
+            <i class="fas fa-spa"></i>
+            <h5>Хамам</h5>
+            <span>+7 500 ₽</span>
+          </div>
+        </label>
+        <label class="service">
+          <input type="checkbox" value="4500" data-name="SPA-массаж">
+          <div class="service-card">
+            <i class="fas fa-hand-sparkles"></i>
+            <h5>SPA-массаж</h5>
+            <span>+4 500 ₽</span>
+          </div>
+        </label>
+        <label class="service">
+          <input type="checkbox" value="3500" data-name="Завтрак в номер">
+          <div class="service-card">
+            <i class="fas fa-utensils"></i>
+            <h5>Завтрак в номер</h5>
+            <span>+3 500 ₽</span>
+          </div>
+        </label>
+        <label class="service">
+          <input type="checkbox" value="8000" data-name="Романтический ужин">
+          <div class="service-card">
+            <i class="fas fa-wine-glass-alt"></i>
+            <h5>Романтический ужин</h5>
+            <span>+8 000 ₽</span>
+          </div>
+        </label>
+        <label class="service">
+          <input type="checkbox" value="6000" data-name="Трансфер">
+          <div class="service-card">
+            <i class="fas fa-car"></i>
+            <h5>Трансфер</h5>
+            <span>+6 000 ₽</span>
+          </div>
+        </label>
+      </div>
+      <div class="step-actions">
+        <button class="btn-ghost-dark" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Назад</button>
+        <button class="btn-primary" onclick="nextStep(4)">Далее <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="booking-step" id="step-4">
+      <h2>Ваши данные</h2>
+      <p class="step-sub">Мы свяжемся для подтверждения</p>
+      <div class="booking-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Имя</label>
+            <input type="text" id="bk-name" placeholder="Иван">
+          </div>
+          <div class="form-field">
+            <label>Фамилия</label>
+            <input type="text" id="bk-surname" placeholder="Иванов">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Телефон</label>
+            <input type="tel" id="bk-phone" placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" id="bk-email" placeholder="email@example.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Пожелания</label>
+          <textarea id="bk-comment" rows="3" placeholder="Особые пожелания..."></textarea>
+        </div>
+      </div>
+
+      <div class="booking-summary">
+        <h4>Ваше бронирование</h4>
+        <div class="summary-row"><span>Даты:</span><span id="sum-dates">—</span></div>
+        <div class="summary-row"><span>Гости:</span><span id="sum-guests">—</span></div>
+        <div class="summary-row"><span>Домик:</span><span id="sum-cottage">—</span></div>
+        <div class="summary-row"><span>Услуги:</span><span id="sum-services">—</span></div>
+        <div class="summary-total"><span>Итого:</span><span id="sum-total">0 ₽</span></div>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" required>
+        <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+      </label>
+
+      <div class="step-actions">
+        <button class="btn-ghost-dark" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Назад</button>
+        <button class="btn-primary" onclick="submitBooking()">Подтвердить бронирование <i class="fas fa-check"></i></button>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div class="booking-step" id="step-success">
+      <div class="success-block">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h2>Заявка отправлена!</h2>
+        <p>Спасибо за бронирование. Наш менеджер свяжется с вами в течение 15 минут для подтверждения.</p>
+        <button class="btn-primary" onclick="closeBooking()">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COTTAGE DETAIL MODAL -->
+<div class="modal" id="cottageModal">
+  <div class="modal-overlay" onclick="closeCottage()"></div>
+  <div class="modal-content wide">
+    <button class="modal-close" onclick="closeCottage()"><i class="fas fa-times"></i></button>
+    <div id="cottageContent"></div>
+  </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-buttons">
+  <a href="https://wa.me/79999999999" class="float-btn wa"><i class="fab fa-whatsapp"></i></a>
+  <button class="float-btn up" onclick="scrollTop()"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
